@@ -20,8 +20,9 @@ select.addEventListener('change', function fun() {
 
 //---------------------------------------------------------------------------------
 async function currentTemp() {
-    var response = await fetch(`https://api.weatherbit.io/v2.0/current?key=cdafcd079c8d477abd1a0a1e960429ae&city=${city}`);
+    var response = await fetch(`https://api.weatherbit.io/v2.0/current?key=52738c8456a2461587a18162d778676c&city=${city}`);
     cTemp = await response.json();
+    console.log(cTemp);
     cTemp = cTemp.data[0];
     // console.log(cTemp);
     date = (cTemp.ob_time).substring(0, 10);
@@ -76,7 +77,7 @@ function ed() {
 
 
 async function futureTemp() {
-    var response = await fetch(`https://api.weatherbit.io/v2.0/history/hourly?key=cdafcd079c8d477abd1a0a1e960429ae&city=${city}&start_date=${date}&end_date=${ed()}`);
+    var response = await fetch(`https://api.weatherbit.io/v2.0/history/hourly?key=52738c8456a2461587a18162d778676c&city=${city}&start_date=${date}&end_date=${ed()}`);
     fTemp = await response.json();
     fTemp = fTemp.data;
     console.log(fTemp);
